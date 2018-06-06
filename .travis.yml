@@ -30,7 +30,7 @@ before_install:
     - if [[ ${TRAVIS_PHP_VERSION:0:1} == "7" || $TRAVIS_PHP_VERSION == "nightly" ]]; then composer require --dev --no-update phpunit/phpunit ~5 ; fi
 
 before_script:
-    - if [[ ${TRAVIS_PHP_VERSION:0:1} == "7" ]]; then pecl install mailparse-2.1.6 ; fi
+    - if [[ ${TRAVIS_PHP_VERSION:0:1} == "5" ]]; then pecl install mailparse-2.1.6 ; fi
     - if [[ ${TRAVIS_PHP_VERSION:0:1} == "7" || $TRAVIS_PHP_VERSION == "nightly" ]]; then pecl install mailparse ; fi
     - composer self-update
     - composer update $COMPOSER_OPTS
